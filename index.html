@@ -487,12 +487,12 @@
   }
 
   function renderDots() {
-    const c    = cfg();
-    const total = c.sessions;
+    const c            = cfg();
+    const sessionCount = c.sessions;
     dotsEl.innerHTML = '';
-    for (let i = 0; i < total; i++) {
+    for (let i = 0; i < sessionCount; i++) {
       const d = document.createElement('div');
-      d.className = 'dot' + (i < (sessions % total || (sessions > 0 && sessions % total === 0 ? total : 0)) ? ' done' : '');
+      d.className = 'dot' + (i < (sessions % sessionCount || (sessions > 0 && sessions % sessionCount === 0 ? sessionCount : 0)) ? ' done' : '');
       dotsEl.appendChild(d);
     }
     countEl.textContent = sessions;
